@@ -17,3 +17,7 @@ The image above shows the RabbitMQ dashboard after receiving a connection from t
 ![rabbitmq_3.png](assets/rabbitmq_3.png)
 
 The image above shows the RabbitMQ dashboard, the publisher app's console and the subscriber app's console. After we invoke `cargo run` on the publisher console, the publisher's app sends 5 messages to RabbitMQ. RabbitMQ then forwards the messages to the subscriber's app, notifying the subscriber to log the messages to the console.
+
+![rabbitmq_4.png](assets/rabbitmq_4.jpeg)
+
+When we run the publisher app, the message rates metric will go up by the amount of messages sent from the publisher. Invoking `cargo run` multiple times within a short interval means launching the publisher app multiple times, sending 5 messages each time. The last `cargo run` invocation in the image is run immediately after the second-to-last invocation, causing the message rates to spike up to 2 messages per second.
